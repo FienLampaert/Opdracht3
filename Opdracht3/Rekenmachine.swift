@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+ 
 
 class Rekenmachine{
     var getallen: [Double]
