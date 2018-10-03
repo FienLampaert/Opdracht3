@@ -7,7 +7,7 @@
 //
 
 import Foundation
- 
+
 
 class Rekenmachine{
     var getallen: [Double]
@@ -36,7 +36,7 @@ class Rekenmachine{
             result = g1 + g2;
         }
         
-        return result
+        return result;
         
      }
     
