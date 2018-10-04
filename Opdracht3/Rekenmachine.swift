@@ -23,25 +23,54 @@ class Rekenmachine{
      func addOperand(Operand operand: Double){
         getallen.append(operand);
      }
-     
-     /*
+    
     func performOperation(Operator operation: String) -> (result: Double?, feedback: String){
      
-        //let o = operation;
-        var result: Double;
+        let o: String = operation;
+        let result: Double;
+        let operationString: String;
+        var feedback: String;
         
         if(getallen.count >= 2){
-            let g1 = getallen[0];
-            let g2 = getallen[1];
+            let count = getallen.count;
+            let g1 = getallen[count-2];
+            let g2 = getallen[count-1];
             
-            result = g1 + g2;
+            switch o {
+            case "+":
+                result = g1 + g2;
+                operationString = "opgeteld";
+                break;
+            case "-":
+                result = g1 - g2;
+                operationString = "afgetrokken";
+                break;
+            case "x":
+                result = g1 * g2;
+                operationString = "vermenigvuldigd";
+                break;
+            case "/":
+                result = g1/g2;
+                operationString = "gedeeld";
+                break;
+            default:
+                result = 0;
+                operationString = "";
+                break;
+            }
+            feedback = "Getal " + String(g1) + " en getal " + String(g2)
+            feedback += " zijn " + String(operationString) + ".";
+            getallen.append(result);
+        }
+        else{
+            result = 0;
+            feedback = "Er moeten minimum 2 getallen ingevoerd zijn."
             
         }
         
-        //return Double(result);
+        return (result, feedback);
         
      }
- */
     
 }
 
