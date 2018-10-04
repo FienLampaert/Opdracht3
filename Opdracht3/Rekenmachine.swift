@@ -24,21 +24,24 @@ class Rekenmachine{
         getallen.append(operand);
      }
      
-     func performOperation(Operator operation: String) -> (result: Double?, feedback: String){
+     /*
+    func performOperation(Operator operation: String) -> (result: Double?, feedback: String){
      
-        let o = operation;
-        var result = 0.0;
+        //let o = operation;
+        var result: Double;
         
         if(getallen.count >= 2){
             let g1 = getallen[0];
             let g2 = getallen[1];
             
             result = g1 + g2;
+            
         }
         
-        return result;
+        //return Double(result);
         
      }
+ */
     
 }
 
