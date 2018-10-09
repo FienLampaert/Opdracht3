@@ -13,7 +13,9 @@ class ViewController: UIViewController {
     let rekenmachine = Rekenmachine()
     var getal: String = "";
     
-    @IBOutlet weak var txtStack: UITextView!
+    //@IBOutlet weak var txtStack: UITextView!
+    @IBOutlet weak var txtStack2: UITextView!
+    @IBOutlet weak var txtStackScroll: UIScrollView!
     @IBOutlet weak var lblFeedback: UILabel!
     
     @IBAction func bntCijfer(_ sender: Any) {
@@ -27,7 +29,7 @@ class ViewController: UIViewController {
         let gDouble = Double(getal);
         rekenmachine.addOperand(Operand: gDouble ?? 0.0);
         
-        txtStack.text += String(getal) + "\n";
+        txtStack2.text += String(getal) + "\n";
         getal = "";
     }
     
@@ -35,14 +37,14 @@ class ViewController: UIViewController {
         let operation = (sender as AnyObject).currentTitle!;
         let result = rekenmachine.performOperation(Operator: operation!);
         let r = result.result;
-        txtStack.text += String(r ?? 0.0) + "\n";
+        txtStack2.text += String(r ?? 0.0) + "\n";
         let feedback = result.feedback;
         lblFeedback.text = feedback;
     }
     
     @IBAction func btnClear(_ sender: Any) {
         rekenmachine.clearStack();
-        txtStack.text = "";
+        txtStack2.text = "";
     }
     
     
