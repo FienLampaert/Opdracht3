@@ -36,6 +36,9 @@ class Rekenmachine{
             let g1 = getallen[count-2];
             let g2 = getallen[count-1];
             
+            getallen.remove(at: count-1);
+            getallen.remove(at: count-2);
+            
             switch o {
             case "+":
                 result = g1 + g2;

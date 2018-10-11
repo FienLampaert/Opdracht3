@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     let rekenmachine = Rekenmachine()
     var getal: String = "";
+    var getal1: String = "";
     
     //@IBOutlet weak var txtStack: UITextView!
     @IBOutlet weak var txtStack2: UITextView!
@@ -22,15 +23,18 @@ class ViewController: UIViewController {
         //var m = (sender as AnyObject).titleLabel!.text;
         //var g = String((sender as AnyObject).titleLabel!.text);
         let g = (sender as AnyObject).currentTitle!;
-        getal += String(g ?? "");
+        getal1 += String(g ?? "");
+        getal = String(g ?? "");
+        txtStack2.text += getal;
     }
     
     @IBAction func btnEnter(_ sender: Any) {
-        let gDouble = Double(getal);
+        let gDouble = Double(getal1);
         rekenmachine.addOperand(Operand: gDouble ?? 0.0);
         
-        txtStack2.text += String(getal) + "\n";
+        txtStack2.text += "\n";
         getal = "";
+        getal1 = "";
     }
     
     @IBAction func btnOperation(_ sender: Any) {
